@@ -1,0 +1,89 @@
+.crypto-nav {
+   &__header {
+   }
+   &__body {
+      position: relative;
+      padding: 6rem 0 18rem;
+      @include breakpoint($md-3, 0) {
+         padding: 4.6rem 0;
+      }
+      @include breakpoint($md-4, 0) {
+         padding: 3rem 0;
+      }
+   }
+   &__items {
+      display: grid;
+      position: relative;
+      z-index: 3;
+      grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+      gap: 2rem;
+      grid-auto-rows: 1fr;
+      @include breakpoint($md-3, 0) {
+         gap: 1.4rem;
+      }
+      @include breakpoint($md-4, 0) {
+         gap: 1rem;
+      }
+   }
+
+   &__item {
+   }
+
+   &__image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      img {
+         @include breakpoint($maxWidth, 1) {
+            object-fit: contain;
+         }
+      }
+   }
+}
+
+.item-crypto-nav {
+   border-radius: 5px;
+   border: 2px solid rgba(87, 87, 87, 0.34);
+   background: rgba(43, 46, 55, 0.8);
+   box-shadow: inset 0px 0px 18px rgba(255, 255, 255, 0.2);
+   @supports ((-webkit-backdrop-filter: blur(11px)) or (backdrop-filter: blur(11px))) {
+      background: rgba(43, 46, 55, 0.5);
+      backdrop-filter: blur(31px);
+   }
+   padding: 4rem;
+   @include breakpoint($md-3, 0) {
+      padding: 3rem 4rem 3rem 3rem;
+   }
+   @include breakpoint($md-4, 0) {
+      padding: 1.5rem 1.5rem 4rem 1.5rem;
+   }
+   > *:not(:last-child) {
+      margin-bottom: 2rem;
+   }
+   &__icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: $orangeColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__title {
+      font-size: 2.2rem;
+      line-height: calc(26 / 22 * 100%);
+      font-family: "gothampro";
+      font-weight: 700;
+      color: $white;
+      text-transform: uppercase;
+   }
+
+   &__text {
+      font-weight: 300;
+      line-height: calc(27 / 17 * 100%);
+      color: $white;
+   }
+}

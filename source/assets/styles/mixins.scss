@@ -1,0 +1,37 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+   @font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff") format("woff");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+   $addSize: $startSize - $minSize;
+   @if $type==1 {
+      #{$property}: calc($startSize / 10) + rem;
+      @media (max-width: em($maxWidthContainer)) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+      }
+   } @else if $type==2 {
+      #{$property}: $startSize;
+      @media (min-width: em($maxWidthContainer)) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+      }
+   } @else {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+   }
+}
+
+@mixin breakpoint($br, $type) {
+   @if $type==0 {
+      @media (max-width: em($br)) {
+         @content;
+      }
+   } @else if $type==1 {
+      @media (min-width: em($br)) {
+         @content;
+      }
+   }
+}

@@ -1,0 +1,12 @@
+@function rem($px) {
+   $result: calc($px / 10) + rem;
+   @return $result;
+}
+@function em($px) {
+   $result: calc($px / 16) + em;
+   @return $result;
+}
+@function prc($pxOne, $pxTwo) {
+   $result: calc($pxOne / $pxTwo) * 100%;
+   @return $result;
+}

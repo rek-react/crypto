@@ -1,0 +1,83 @@
+.application-download {
+   &__container {
+   }
+
+   &__body {
+      text-align: center;
+      padding: 8rem 1.5rem;
+      border-radius: 5px;
+      border: 2px solid rgba(87, 87, 87, 0.34);
+      background: rgba(43, 46, 55, 0.8);
+      box-shadow: inset 0px 0px 18px rgba(255, 255, 255, 0.2);
+      @supports ((-webkit-backdrop-filter: blur(11px)) or (backdrop-filter: blur(11px))) {
+         background: rgba(43, 46, 55, 0.5);
+         backdrop-filter: blur(11px);
+      }
+      @include breakpoint($md-4, 0) {
+         padding: 4rem 1.5rem;
+         > * {
+            margin-bottom: 2rem;
+         }
+      }
+   }
+
+   &__text {
+      font-size: 2rem;
+      line-height: calc(34 / 20 * 100%);
+      span {
+         font-weight: 700;
+         color: $orangeColor;
+      }
+
+      @include breakpoint($md-4, 0) {
+         font-size: 1.6rem;
+         line-height: calc(27 / 16 * 100%);
+      }
+      @include breakpoint($md-4, 1) {
+         &:not(:last-child) {
+            margin-bottom: 3rem;
+         }
+      }
+   }
+
+   &__title {
+      font-family: "gothampro";
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: calc(38 / 32 * 100%);
+
+      @include breakpoint($md-4, 0) {
+         font-size: 2.4rem;
+         line-height: calc(28 / 24 * 100%);
+      }
+      @include breakpoint($md-4, 1) {
+         &:not(:last-child) {
+            margin-bottom: 5rem;
+         }
+      }
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint($md-4, 0) {
+         flex-direction: column;
+      }
+   }
+
+   &__button {
+      @include breakpoint($md-4, 1) {
+         &:not(:last-child) {
+            margin-right: 4rem;
+         }
+      }
+      @include breakpoint($md-4, 0) {
+         &:not(:last-child) {
+            margin-bottom: 1rem;
+         }
+      }
+   }
+}
+.container {
+}

@@ -1,0 +1,123 @@
+.footer {
+   background: rgba(43, 46, 55, 0.5);
+
+   &__container {
+   }
+
+   &__top {
+      padding: 6rem 0 4rem;
+      @include breakpoint($md-4, 0) {
+         padding-top: 5rem;
+      }
+   }
+
+   &__bottom {
+   }
+}
+
+.top-footer {
+   &__container {
+      text-align: center;
+      @include breakpoint($md-3, 1) {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+   }
+   &__logo {
+      flex: 0 0 auto;
+      @include breakpoint($md-3, 0) {
+         margin-bottom: 3rem;
+         display: inline-block;
+      }
+   }
+   &__menu {
+   }
+}
+
+.menu-footer {
+   &__list {
+      @include breakpoint($md-4, 1) {
+         display: flex;
+         flex-wrap: wrap;
+         @include breakpoint($md-3, 1) {
+            padding-left: 2.5rem;
+         }
+         @include breakpoint($md-3, 0) {
+            justify-content: space-between;
+         }
+      }
+   }
+
+   &__item {
+      @include breakpoint($md-4, 1) {
+         margin-bottom: 0.5rem;
+         &:not(:last-child) {
+            margin-right: 7rem;
+            @include breakpoint($md-2, 0) {
+               margin-right: 2.5rem;
+            }
+            @include breakpoint($md-3, 0) {
+            }
+         }
+      }
+      @include breakpoint($md-4, 0) {
+         &:not(:last-child) {
+            margin-bottom: 4rem;
+         }
+      }
+   }
+
+   &__link {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: calc(24 / 16 * 100%);
+      color: $white;
+      @media (any-hover: hover) {
+         transition: all 0.2s ease;
+         &:hover {
+            color: $orangeColor;
+         }
+      }
+   }
+}
+
+.bottom-footer {
+   padding: 3rem 0;
+   border-top: 2px solid rgba(255, 255, 255, 0.15);
+   &__container {
+      display: flex;
+      align-items: center;
+      @include breakpoint($md-3, 0) {
+         flex-direction: column-reverse;
+         text-align: center;
+      }
+   }
+   &__copyright {
+      @include breakpoint($md-3, 1) {
+         flex: 1 1 auto;
+         padding-right: 1rem;
+      }
+   }
+   &__support {
+      @include breakpoint($md-3, 0) {
+         @include adaptive-value(margin-bottom, 30, 20, 1);
+      }
+   }
+}
+.copyright-footer {
+   color: $white;
+   font-weight: 400;
+   line-height: calc(20 / 17 * 100%);
+
+   @include breakpoint($md-4, 0) {
+      line-height: calc(17 / 14 * 100%);
+      font-size: 1.4rem;
+      &__decor {
+         display: none;
+      }
+      &__text {
+         display: block;
+      }
+   }
+}

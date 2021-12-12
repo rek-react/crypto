@@ -1,0 +1,204 @@
+.header {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   z-index: 100;
+   &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: $mainColor;
+      width: 100%;
+      z-index: 3;
+      box-shadow: 0 4px 31px 0px rgba($color: #000000, $alpha: 0.37);
+   }
+   &__container {
+      display: flex;
+      align-items: center;
+      min-height: 10rem;
+      @include breakpoint($md-4, 0) {
+         min-height: 7rem;
+      }
+   }
+   &__burger {
+      position: relative;
+      z-index: 5;
+   }
+   &__main-block {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+   }
+   &__logo {
+      position: relative;
+      z-index: 5;
+      margin-right: 4rem;
+      @include breakpoint($md-1, 0) {
+         margin-right: 2rem;
+      }
+      @include breakpoint($md-4, 0) {
+         margin-right: 1rem;
+      }
+      @include breakpoint($md-2, 1) {
+         flex-shrink: 0;
+      }
+   }
+
+   &__menu {
+   }
+
+   &__support {
+      flex-shrink: 0;
+      position: relative;
+      z-index: 5;
+      .support__email {
+         @include breakpoint(667, 0) {
+            display: none;
+         }
+      }
+      .support__telegram {
+         @include breakpoint($md-4, 0) {
+            span {
+               display: none;
+            }
+         }
+      }
+   }
+}
+
+.menu-header {
+   position: relative;
+   z-index: 5;
+   @include breakpoint($md-2, 0) {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      transition: left 0.2s ease;
+      z-index: 2;
+      background-color: $mainColor;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: auto;
+      @include adaptive-value(padding-top, 250, 120, 1);
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 30px;
+      &._show {
+         left: 0;
+      }
+      &__list {
+         text-align: center;
+      }
+      &__item {
+         &:not(:last-child) {
+            @include adaptive-value(margin-bottom, 60, 40, 1);
+         }
+      }
+      &__link {
+         font-size: 2rem;
+         line-height: calc(30 / 20 * 100%);
+      }
+   }
+   &__list {
+      @include breakpoint($md-2, 1) {
+         display: flex;
+         flex-wrap: wrap;
+         padding: 0 3.6rem;
+         @include breakpoint($md-1, 0) {
+            padding-left: 2rem;
+         }
+      }
+   }
+
+   &__item {
+      @include breakpoint($md-2, 1) {
+         margin-bottom: 0.5rem;
+         &:not(:last-child) {
+            @include adaptive-value(margin-right, 40, 0, 1);
+         }
+         &_rates {
+            display: none;
+         }
+      }
+   }
+
+   &__link {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: calc(24 / 16 * 100%);
+      color: $white;
+
+      @media (any-hover: hover) {
+         transition: all 0.2s ease;
+         &:hover {
+            color: $orangeColor;
+         }
+      }
+   }
+}
+
+.burger-header {
+   display: none;
+   flex-shrink: 0;
+   @include breakpoint($md-2, 0) {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      margin-right: 2rem;
+      cursor: pointer;
+      padding: 1rem 0.5rem;
+      &._active {
+         border: 1px solid $orangeColor;
+         .burger-header__lines {
+            &::before {
+               top: 50%;
+               transform: translateY(-50%) rotate(45deg);
+            }
+            span {
+               transform: scale(0);
+            }
+            &::after {
+               bottom: 50%;
+               transform: translateY(50%) rotate(-45deg);
+            }
+         }
+      }
+      &__lines {
+         height: 100%;
+         width: 100%;
+         position: relative;
+         &::before,
+         span,
+         &::after {
+            background-color: $white;
+            border-radius: 1px;
+            width: 100%;
+            height: 2px;
+            transition: all 0.2s ease;
+            position: absolute;
+            left: 0;
+         }
+         &::before {
+            content: "";
+            top: 0;
+         }
+         span {
+            top: 50%;
+            transform: translateY(-50%);
+         }
+         &::after {
+            content: "";
+            bottom: 0;
+         }
+      }
+      @include breakpoint($md-4, 0) {
+         margin-right: 1.5rem;
+      }
+   }
+}

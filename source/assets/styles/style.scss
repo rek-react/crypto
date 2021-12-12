@@ -1,0 +1,104 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "fonts";
+@import "reboot";
+@import "bg";
+@import "wrapper&container";
+@import "forms";
+@import "noUiSlider";
+@import "blocks/ui.scss";
+@import "blocks/header.scss";
+@import "blocks/home/home.scss";
+@import "blocks/jobs.scss";
+@import "blocks/footer.scss";
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-weight: 500;
+   font-size: 1.7rem;
+   font-family: $fontFamily;
+   background-color: $mainColor;
+   color: $white;
+   &._lock {
+      overflow: hidden;
+   }
+}
+.page {
+   flex: 1 1 auto;
+   margin-top: 10rem;
+   @include breakpoint($md-4, 0) {
+      margin-top: 7rem;
+   }
+
+   // Home
+   &__intro {
+      padding: 8rem 0 6rem;
+      @include breakpoint($md-3, 0) {
+         padding: 6rem 0 3rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding: 3rem 0 1rem;
+      }
+   }
+   &__crypto-nav {
+      padding-top: 12rem;
+      @include breakpoint($md-3, 0) {
+         padding-top: 7rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding-top: 5rem;
+      }
+   }
+   &__rates {
+      padding-bottom: 12rem;
+      @include breakpoint($md-3, 0) {
+         padding: 5rem 0 7rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding-bottom: 5rem;
+      }
+   }
+   &__reviews {
+      padding: 6rem 0 12rem;
+      @include breakpoint($md-3, 0) {
+         padding-bottom: 7rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding: 3rem 0 5rem;
+      }
+   }
+   &__calculator {
+      padding: 6rem 0;
+      @include breakpoint($md-3, 0) {
+         padding-bottom: 3rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding-top: 3rem;
+      }
+   }
+   &__application-download {
+      padding: 12rem 0 18rem;
+      @include breakpoint($md-3, 0) {
+         padding: 7rem 0 11rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding: 5rem 0 6rem;
+      }
+   }
+
+   //Jobs
+   &__jobs {
+      padding: 8rem 0 24.2rem;
+      @include breakpoint($md-3, 0) {
+         padding-top: 6rem;
+      }
+      @include breakpoint($md-4, 0) {
+         padding-top: 3rem;
+         padding-bottom: 8rem;
+      }
+   }
+}

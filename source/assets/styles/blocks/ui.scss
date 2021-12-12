@@ -1,0 +1,102 @@
+.logo {
+   color: $orangeColor;
+   line-height: calc(24 / 20 * 100%);
+   font-size: 2rem;
+   font-family: "gothampro";
+   font-weight: 700;
+}
+.support {
+   display: flex;
+   align-items: center;
+   @include breakpoint($md-4, 0) {
+      flex-direction: column;
+   }
+   &__email {
+      color: $white;
+      font-size: 1.8rem;
+      line-height: calc(27 / 18 * 100%);
+      margin-right: 10px;
+      @include breakpoint($md-4, 0) {
+         font-size: 1.6rem;
+         margin: 0 0 5px 0;
+      }
+      @media (any-hover: hover) {
+         transition: all 0.2s ease;
+         &:hover {
+            color: $darkBlueColor;
+         }
+      }
+   }
+
+   &__telegram {
+      text-transform: uppercase;
+      line-height: calc(21 / 14 * 100%);
+      span {
+         font-size: 1.4rem;
+         color: $white;
+         @include breakpoint($md-4, 0) {
+            font-size: 1.2rem;
+         }
+      }
+      &::before {
+         margin-right: 10px;
+         font-size: 1.7rem;
+         color: #65c4ff;
+         @include breakpoint($md-4, 0) {
+            font-size: 1.6rem;
+            margin-right: 5px;
+         }
+      }
+   }
+}
+.btn {
+   display: inline-flex;
+   align-items: center;
+   text-align: center;
+   border-radius: 5px;
+   justify-content: center;
+   min-height: 6.2rem;
+   background-color: $darkBlueColor;
+   font-weight: 700;
+   color: $white;
+   min-width: 23.3rem;
+   padding: 5px;
+   box-shadow: inset 0px 4px 17px rgba(255, 255, 255, 0.25);
+   @include breakpoint($md-4, 0) {
+      min-width: 20rem;
+   }
+   @media (any-hover: hover) {
+      transition: all 0.2s ease;
+      &:hover {
+         box-shadow: inset 0px 0px 31px rgba(255, 255, 255, 0.39);
+      }
+   }
+}
+.block-header {
+   text-align: center;
+   &__title {
+      font-weight: 700;
+      font-size: 4.2rem;
+      line-height: calc(50 / 42 * 100%);
+      font-family: "gothampro";
+      color: $white;
+      @include breakpoint($md-4, 0) {
+         font-size: 3.2rem;
+         line-height: calc(38 / 32 * 100%);
+      }
+   }
+
+   &__text {
+      color: $white;
+      font-size: 2rem;
+      line-height: calc(30 / 20 * 100%);
+      max-width: 561px;
+      margin: 4rem auto 0 auto;
+      @include breakpoint($md-3, 0) {
+         margin-top: 3rem;
+      }
+      @include breakpoint($md-4, 0) {
+         margin-top: 1.5rem;
+      }
+   }
+}
