@@ -391,6 +391,15 @@ textarea {
   font-size: 2rem;
   font-family: "gothampro";
   font-weight: 700;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.logo._home {
+  cursor: default;
+  pointer-events: none;
 }
 
 .support {
