@@ -63,9 +63,9 @@ export class Functions {
    }
    static slideToggle(target, duration = 500) {
       if (target.hidden) {
-         return _slideDown(target, duration)
+         return this.slideDown(target, duration)
       } else {
-         return _slideUp(target, duration)
+         return this.slideUp(target, duration)
       }
    }
    static isMobile() {

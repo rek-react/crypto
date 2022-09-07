@@ -13,7 +13,7 @@ export const styles = () => {
             outputStyle: 'expanded'
         }))
         .pipe(
-            app.plugins.gulpIf(app.isBuild, groupCssMediaQueries())
+            groupCssMediaQueries()
         )
         .pipe(
             app.plugins.gulpIf(app.isBuild, autoprefixer({

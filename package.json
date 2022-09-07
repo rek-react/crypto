@@ -1,5 +1,5 @@
 {
-  "name": "auction",
+  "name": "crypto.",
   "version": "1.0.0",
   "main": "index.js",
   "homepage": "https://rek123124.github.io/crypto",
@@ -14,6 +14,9 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "babel-loader": "^8.2.5",
     "browser-sync": "^2.27.10",
     "del": "^7.0.0",
     "gh-pages": "^4.0.0",
